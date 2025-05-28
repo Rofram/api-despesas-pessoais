@@ -1,0 +1,30 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+  "name": "Wazai DevContainer",
+  "dockerComposeFile": "../docker-compose.dev.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vivaxy.vscode-conventional-commits",
+        "YoavBls.pretty-ts-errors",
+        "Gruntfuggly.todo-tree",
+        "christian-kohler.path-intellisense",
+        "kisstkondoros.vscode-codemetrics",
+        "dotenv.dotenv-vscode",
+        "eamodio.gitlens",
+        "axetroy.vscode-npm-import-package-version",
+        "quicktype.quicktype",
+        "Prisma.prisma",
+        "SeyyedKhandon.qpack",
+        "pflannery.vscode-versionlens",
+        "EditorConfig.EditorConfig",
+        "fill-labs.dependi",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  }
+}

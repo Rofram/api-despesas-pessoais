@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:17.2-alpine3.21
+    restart: unless-stopped
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-docker}
+      POSTGRES_DB: ${DB_NAME:-expensive}
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 2s
+      timeout: 2s
+      retries: 30
+
+  redis:
+    image: redis:7.2.4-alpine
+    restart: on-failure
+    expose:
+      - '6379'
+    ports:
+      - 6379:6379
